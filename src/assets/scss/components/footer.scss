@@ -1,0 +1,269 @@
+@import 'src/assets/scss/utils/vars';
+@import 'src/assets/scss/utils/mixins';
+@import 'src/assets/scss/utils/fonts';
+
+
+.footer {
+  color: $white;
+  background-color: $darkBlue;
+
+  &__subscribe {
+    @include flexColumn;
+    padding-top: 118px;
+    padding-bottom: 119px;
+    background-color: $blue;
+  }
+
+  &__title {
+    @include resetIndents;
+    @include title;
+  }
+
+  &__form {
+    margin-top: 30px;
+    display: flex;
+    max-width: 558px;
+    width: 100%;
+  }
+
+  &__input {
+    max-width: 392px;
+    width: 100%;
+    padding: 8px 15px 15px 28px;
+    background-color: $darkBlue;
+    border: none;
+    outline: none;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+    font-family: $mainFonts;
+    font-size: $mainFontSize;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $white;
+
+    &::placeholder {
+      color: $white;
+      font-family: $mainFonts;
+      font-size: $mainFontSize;
+      line-height: 1.5;
+    }
+  }
+
+  &__button {
+    padding: 10px 40px 14px;
+
+    border: none;
+    outline: none;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: #fff;
+
+    font-family: $mainFonts;
+    font-size: $mainFontSize;
+    font-weight: 700;
+    line-height: 1.5;
+    color: $darkBlue;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover {
+      background-color: darken(#fff, 7%);
+
+    }
+
+    &:active {
+      background-color: #D2E4FA;
+
+    }
+  }
+
+  &__nav {
+    max-width: 1375px;
+    @include flex;
+    margin-left: auto;
+    margin-right: 158px;
+
+    @media screen and (max-width: $desktopSize) {
+      margin-right: auto;
+    }
+
+    .container {
+      max-width: 1146px;
+      padding-top: 50px;
+      padding-bottom: 44px;
+
+      @include flex;
+      margin-left: 0;
+    }
+
+    &-bar {
+      @include flex;
+
+      max-width: 541px;
+      width: 100%;
+    }
+
+    &-list {
+      @include resetList;
+      width: 100%;
+      max-width: 345px;
+      justify-content: space-between;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $white;
+      font-weight: 200;
+      line-height: 1.5;
+
+      &:hover {
+        color: darken(#fff, 30%);
+      }
+    }
+  }
+
+  &__social {
+    &-list {
+      @include resetList;
+      width: 120px;
+      justify-content: space-between;
+    }
+
+    &-item {
+      &:first-child {
+        @include svgLinkFill(#4867AA)
+      }
+
+      &:nth-child(2) {
+        @include svgLinkFill(#1DA1F2)
+
+      }
+
+
+      &:last-child {
+        @include svgLinkFill(#FF0000)
+
+      }
+
+    }
+  }
+
+  &__copyright {
+    @include resetIndents;
+    font-weight: 200;
+    line-height: 1.5;
+  }
+
+  &__scroll-btn {
+    align-self: center;
+    flex-shrink: 0;
+    @include scrollButton(#fff);
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .footer {
+    &__nav {
+      padding-right: 25px;
+      padding-left: 25px;
+
+      .container {
+        width: 100%;
+        padding-right: 50px;
+      }
+    }
+
+    &__copyright {
+      padding-right: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: $tableSize) {
+  .footer {
+
+    &__nav {
+      position: relative;
+    }
+
+    &__nav-bar {
+      flex-flow: column;
+      align-items: center;
+    }
+
+    &__social-list {
+      margin-top: 15px;
+      margin-left: 0;
+    }
+
+    &__subscribe {
+      padding-top: 30px;
+      padding-bottom: 50px;
+    }
+
+    &__form {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    .container {
+      flex-flow: column;
+      align-items: center;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      padding-right: 0;
+    }
+
+    &__copyright {
+      text-align: center;
+      padding-right: 0;
+      padding-bottom: 15px;
+    }
+
+    &__scroll-btn {
+      position: absolute;
+      bottom: 20px;
+      right: 25px;
+      width: 50px;
+      height: 50px;
+      svg {
+        width: 16px;
+        height: 30px;
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: $mobileSize) {
+  .footer {
+    font-size: 14px;
+
+    &__button {
+      padding: 12px 28px 14px 20px;
+      font-size: 14px;
+    }
+
+    &__input::placeholder {
+      font-size: 14px;
+    }
+
+    &__social-list {
+      align-self: flex-start;
+    }
+
+
+    &__scroll-btn {
+      width: 40px;
+      height: 40px;
+      bottom: 30px;
+      right: 30px;
+      svg {
+        width: 12px;
+        height: 22px;
+      }
+    }
+
+
+
+  }
+}

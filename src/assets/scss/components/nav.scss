@@ -1,0 +1,173 @@
+@import 'src/assets/scss/utils/vars';
+@import 'src/assets/scss/utils/mixins';
+@import 'src/assets/scss/utils/fonts';
+@import 'burger';
+
+.nav {
+  max-width: 1644px;
+  @include flex;
+
+  margin-left: 136px;
+  margin-bottom: 88px;
+
+  @media screen and (min-width: 1925px) {
+    @include center;
+
+  }
+  @media screen and (max-width: 1700px) {
+    max-width: 1400px;
+    @include center;
+
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  &__logo {
+    margin: 0;
+    padding: 25px 23px 30px;
+
+    border-bottom-right-radius: 21.5px;
+    border-bottom-left-radius: 21.5px;
+
+    @include title;
+    color: $white;
+
+    background-color: $blue;
+  }
+
+  &__list {
+    @include resetList();
+    width: 572px;
+
+    justify-content: space-between;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    margin-top: 40px;
+
+    &:last-child {
+      margin-top: 0;
+      margin-left: 13px;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    color: $baseGrey;
+    text-decoration: none;
+
+    &_active {
+      color: $blue;
+    }
+
+    &:hover {
+      color: lighten($darkBlue, 10%);
+      transition: color .5s ease;
+    }
+
+    &:active {
+      color: $darkBlue;
+    }
+  }
+
+  &__sign-button {
+    margin-top: 25px;
+    padding: 15px 51px;
+
+    font-family: $mainFonts;
+    font-weight: 700;
+    font-size: $mainFontSize;
+    color: $white;
+    text-transform: uppercase;
+
+    background-color: $darkBlue;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    border-radius: 25px;
+
+    &:hover {
+      background-color: lighten($darkBlue, 10%);
+      transition: background-color .5s ease;
+    }
+
+    &:active {
+      background-color: darken($darkBlue, 5%);
+    }
+  }
+
+}
+
+@media screen and (max-width: $tableSize) {
+  .nav {
+    max-width: 860px;
+
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .nav__list {
+    display: none;
+
+    &.active {
+      position: absolute;
+      left: 0;
+      z-index: 10;
+
+      width: 100%;
+
+      @include flexColumn;
+
+      @include center;
+
+      padding-bottom: 15px;
+
+      background-color: $white;
+      box-shadow: 0 3px 1px rgba(0, 66, 148, 0.08);
+    }
+
+    &__item {
+      margin-bottom: 15px;
+
+      text-align: center;
+
+      &:last-child {
+        margin-bottom: 15px;
+      }
+    }
+
+    &__sign-button {
+      margin: 0 auto 20px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobileSize) {
+
+  .nav {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    &__logo {
+      padding: 14px 13px 18px;
+
+      border-bottom-right-radius: 12px;
+      border-bottom-left-radius: 12px;
+
+      font-size: 30px;
+    }
+  }
+
+  .burger {
+    top: 10px;
+    right: 20px;
+  }
+
+}

@@ -1,0 +1,44 @@
+@import 'mixins';
+@font-face {
+  font-family: "Quicksand";
+  src: url("/src/assets/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.eot"),
+  url('/src/assets/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.woff') format('woff'), // Pretty Modern Browsers
+  url('/src/assets/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.woff2') format('woff2'),
+  url('/src/assets/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.ttf') format('truetype'), // Safari, Android, iOS
+  url('/src/assets/fonts/Quicksand/Quicksand-Regular/Quicksand-Regular.svg') format('svg'); // Legacy iOS
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("/src/assets/fonts/Quicksand/Quicksand-Light/Quicksand-Light.eot"),
+  url('/src/assets/fonts/Quicksand/Quicksand-Light/Quicksand-Light.woff') format('woff'), // Pretty Modern Browsers
+  url('/src/assets/fonts/Quicksand/Quicksand-Light/Quicksand-Light.woff2') format('woff2'), // Pretty Modern Browsers
+  url('/src/assets/fonts/Quicksand/Quicksand-Light/Quicksand-Light.ttf') format('truetype'), // Safari, Android, iOS
+  url('/src/assets/fonts/Quicksand/Quicksand-Light/Quicksand-Light.svg') format('svg'); // Legacy iOS
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("/src/assets/fonts/Quicksand/Quicksand-Medium/Quicksand-Medium.eot"),
+  url('/src/assets/fonts/Quicksand/Quicksand-Medium/Quicksand-Medium.woff') format('woff'), // Pretty Modern Browsers
+  url('/src/assets/fonts/Quicksand/Quicksand-Medium/Quicksand-Medium.woff2') format('woff2'), // Pretty Modern Browsers
+  url('/src/assets/fonts/Quicksand/Quicksand-Medium/Quicksand-Medium.ttf') format('truetype'), // Safari, Android, iOS
+  url('/src/assets/fonts/Quicksand/Quicksand-Medium/Quicksand-Medium.svg') format('svg'); // Legacy iOS
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("/src/assets/fonts/Quicksand/Quicksand-Bold/Quicksand-Bold.eot"),
+  url('/src/assets/fonts/Quicksand/Quicksand-Bold/Quicksand-Bold.woff') format('woff'), // Pretty Modern Browsers
+  url('/src/assets/fonts/Quicksand/Quicksand-Bold/Quicksand-Bold.woff2') format('woff2'), // Pretty Modern Browsers
+  url('/src/assets/fonts/Quicksand/Quicksand-Bold/Quicksand-Bold.ttf') format('truetype'), // Safari, Android, iOS
+  url('/src/assets/fonts/Quicksand/Quicksand-Bold/Quicksand-Bold.svg') format('svg'); // Legacy iOS
+  font-weight: 700;
+  font-style: normal;
+}

@@ -1,0 +1,58 @@
+@import 'utils/vars';
+@import 'utils/mixins';
+@import 'utils/fonts';
+@import 'components/nav';
+@import 'components/mainScreen';
+@import 'components/button';
+@import 'components/features';
+@import 'components/about';
+@import 'components/works';
+@import 'components/rate';
+@import 'components/testimonial';
+@import 'components/slider';
+@import 'components/news';
+@import 'components/freeTrial';
+@import 'components/footer';
+
+* {
+  box-sizing: border-box;
+
+}
+
+body {
+  max-width: 1920px;
+  font-family: $mainFonts;
+  font-size: $mainFontSize;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.header {
+  max-width: 1920px;
+  @include center;
+
+
+  background-image: url("/src/assets/img/bcg.svg");
+  background-repeat: no-repeat;
+
+  @media screen and (max-width: $tableSize) {
+    background-image: none;
+  }
+}
+
+.container {
+  width: 1350px;
+  @include center;
+
+
+  @media screen and (max-width: 1366px){
+    width: auto;
+    max-width: 1160px;
+  }
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+

@@ -1,0 +1,73 @@
+@import 'src/assets/scss/utils/vars';
+@import 'src/assets/scss/utils/mixins';
+@import 'src/assets/scss/utils/fonts';
+
+.free-trial {
+  background-color: $bgColor;
+
+  .container {
+    max-width: 754px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 133px;
+    padding-bottom: 113px;
+  }
+
+  &__title {
+    @include titleH2;
+    margin: 0 0 25px;
+    padding: 0;
+  }
+
+  &__text {
+    @include resetIndents;
+    line-height: 1.5;
+    font-weight: 200;
+  }
+
+  &__button {
+    align-self: center;
+    margin-top: 4px;
+    padding: 12px 111px 14px 66px;
+    background-color: $blue;
+    color: $white;
+    span {
+      position: relative;
+      &::after {
+        content: url("/src/assets/img/arrowButton.svg");
+        position: absolute;
+        top: 4px;
+        left: 98px;
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tableSize){
+  .free-trial {
+    .container {
+      padding: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 680px){
+  .free-trial {
+    .container {
+      flex-flow: column;
+      align-items: center;
+    }
+
+    &__title {
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    &__text {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,162 @@
+@import 'src/assets/scss/utils/vars';
+@import 'src/assets/scss/utils/mixins';
+@import 'src/assets/scss/utils/fonts';
+
+.news {
+  .container {
+    @include flexColumn;
+
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  &__block-title {
+    @include titleH2;
+    padding: 0;
+    margin: 126px 0 0;
+    text-align: center;
+  }
+
+  p {
+    font-size: $mainFontSize;
+    line-height: 24px;
+    font-weight: 200;
+  }
+
+  img {
+    //width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 70, 156, 0.08);
+    border-radius: 5px;
+  }
+
+  &__text {
+    max-width: 722px;
+    padding: 0;
+    margin: 25px 0 0;
+    text-align: center;
+  }
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 44px;
+    padding-bottom: 106px;
+    max-width: 1146px;
+
+  }
+
+  &__main {
+    max-width: 571px;
+    display: flex;
+    flex-flow: column;
+    margin-right: 30px;
+    img {
+    }
+
+    &-title {
+      padding: 0;
+      margin: 30px 0 0;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: $blue;
+    }
+
+    &-descr {
+      padding: 0;
+      margin: 25px 0 0;
+      max-width: 543px;
+    }
+
+  }
+
+  &__link {
+
+    @include linkMore;
+  }
+
+  &__image {
+    order: -1;
+  }
+
+  &__list {
+    @include resetList;
+    flex-flow: column;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    .news__image {
+      margin-right: 30px;
+      max-width: 166px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    max-width: 410px;
+    padding: 0;
+    margin: -5px 0 0;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  &__descr {
+    max-width: 340px;
+    padding: 0;
+    margin: 25px 0 0;
+  }
+}
+
+@media screen and (max-width: $tableSize){
+  .news {
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+    &__block-title {
+      margin-top: 50px;
+    }
+
+    &__container {
+      flex-flow: column;
+      padding-bottom: 40px;
+    }
+
+    &__main {
+      padding-bottom: 30px;
+      margin-right: 0;
+    }
+  }
+}
+
+
+@media screen and (max-width: $mobileSize) {
+  .news {
+    &__block-title {
+      font-size: 28px;
+    }
+
+    &__container {
+      align-items: center;
+    }
+    &__item {
+      flex-flow: column;
+      align-items: center;
+      .news__image {
+        max-width: 100vw;
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+
+    &__descr {
+      margin-top: 15px;
+    }
+  }
+}

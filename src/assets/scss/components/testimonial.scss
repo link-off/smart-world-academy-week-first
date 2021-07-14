@@ -1,0 +1,116 @@
+@import 'src/assets/scss/utils/vars';
+@import 'src/assets/scss/utils/mixins';
+@import 'src/assets/scss/utils/fonts';
+
+.testimonial {
+  display: flex;
+  justify-content: space-between;
+  background-color: $bgColor;
+
+  &__image {
+    @include resetIndents;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__title {
+    padding: 0;
+    margin: 113px 0 0;
+    @include titleH2;
+  }
+
+  &__slider {
+    margin-top: 40px;
+  }
+
+  &__item {
+    padding: 40px 0 39px 30px;
+    background-color: #fff;
+  }
+
+
+  &__subtitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-right: 37px;
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0;
+    margin: 0 0 10px;
+  }
+
+  &__descr {
+    padding: 0;
+    margin: 0 0 25px;
+    font-size: 14px;
+    color: #999999;
+  }
+
+  &__icon {
+    margin-top: 5px;
+    width: 30px;
+    height: 30px;
+  }
+
+  &__text {
+    @include resetIndents;
+    font-size: $mainFontSize;
+    color: #999999;
+  }
+}
+
+@media screen and (max-width: $desktopSize) {
+  .testimonial {
+    align-items: center;
+
+    &__slider-container {
+      padding-left: 20px;
+    }
+
+    &__title {
+      margin-top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $laptopSize) {
+  .testimonial {
+    padding-bottom: 50px;
+
+    &__picture {
+      display: none;
+    }
+
+    &__title {
+      margin-top: 30px;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: $mobileSize) {
+
+  .testimonial {
+    &__slider-container {
+      padding-left: 0;
+      @include center;
+
+    }
+
+    &__item {
+      padding: 40px 0 39px 15px;
+      background-color: #fff;
+    }
+
+    &__subtitle {
+
+      padding-right: 15px;
+    }
+  }
+}
+
+

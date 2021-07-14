@@ -1,0 +1,106 @@
+@import 'src/assets/scss/utils/vars';
+@import 'src/assets/scss/utils/mixins';
+@import 'src/assets/scss/utils/fonts';
+
+.main-screen {
+  position: relative;
+  z-index: 1;
+
+  &__scroll-btn {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include scrollButton($blue);
+    z-index: 10;
+  }
+
+  &__arrow {
+    svg{
+    transform: rotate(180deg);
+    }
+    path {
+      fill: $white;
+    }
+  }
+
+  &__container {
+    @include flexColumn;
+
+    max-width: 1350px;
+    @include center;
+
+  }
+
+  &__list {
+    @include resetList();
+    flex-flow: column;
+    align-items: center;
+
+  }
+
+  &__item {
+    margin-bottom: 32px;
+
+    &:last-child {
+      width: 362px;
+      @include flex;
+
+      margin-bottom: 0;
+      @media screen and (max-width: $mobileSize) {
+        width: auto;
+        flex-flow: column;
+        align-items: center;
+        .button {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  &__title {
+    @include title;
+    text-align: center;
+    @include resetIndents;
+    @media screen and (max-width: $mobileSize) {
+      font-size: 24px;
+    }
+  }
+
+  &__descr {
+    max-width: 650px;
+    padding: 0;
+    margin: 31px auto 0;
+
+    line-height: 27px;
+    text-align: center;
+    color: $baseGrey;
+
+    @media screen and (max-width: $tableSize) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    @media screen and (max-width: $mobileSize) {
+      font-size: 14px;
+    }
+
+  }
+
+  &__device {
+    margin-top: 108px;
+    margin-right: 14px;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: $tableSize) {
+  .main-screen {
+    &__device {
+      margin-top: 35px;
+    }
+  }
+}

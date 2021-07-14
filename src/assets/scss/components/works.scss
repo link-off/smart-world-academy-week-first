@@ -1,0 +1,100 @@
+@import 'src/assets/scss/utils/vars';
+@import 'src/assets/scss/utils/mixins';
+@import 'src/assets/scss/utils/fonts';
+
+.works {
+
+  @include flexColumn;
+
+  padding-bottom: 137px;
+
+  background-color: $bgColor;
+
+  &__title {
+    margin: 115px 0 0;
+    padding: 0;
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &__text {
+    max-width: 722px;
+    padding: 0;
+    margin: 25px auto 0;
+    line-height: 24px;
+    font-weight: 200;
+    text-align: center;
+  }
+
+  &__list {
+    position: relative;
+    max-width: 1113px;
+    @include resetList;
+    justify-content: space-between;
+    margin-top: 45px;
+    @include center;
+
+    z-index: 10;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 48px;
+      left: 50%;
+
+      margin-left: -35%;
+      z-index: -1;
+
+      max-width: 780px;
+      width: 100%;
+
+      border-top: 2px dashed $blue;
+
+      @media screen and (max-width: 1366px){
+        margin-left: -38%;
+        max-width: 680px;
+      }
+      @media screen and (max-width: $tableSize){
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+    @include flexColumn;
+
+    max-width: 333px;
+  }
+
+  &__subtitle {
+    margin: 0;
+    padding: 30px 0 0;
+    font-size: 18px;
+    font-weight: 500;
+    &~.works__text {
+      margin-top: 20px;
+    }
+  }
+
+}
+
+
+@media screen and (max-width: $tableSize){
+  .works {
+    padding-bottom: 40px;
+    &__title {
+      margin-top: 50px;
+    }
+    &__text {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    &__list {
+      flex-flow: column;
+      align-items: center;
+    }
+    &__item {
+      margin-bottom: 20px;
+    }
+  }
+}

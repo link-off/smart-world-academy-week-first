@@ -1,0 +1,104 @@
+@import "vars";
+
+@mixin resetList() {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin title {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+@mixin titleH2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+@mixin resetIndents {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin visually-hidden() {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+@mixin scrollButton ($color) {
+  width: 70px;
+  height: 70px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: $color;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  &:hover, &:focus {
+    box-shadow: 0 0 0 22px rgba($color, 0.23);
+    transition: box-shadow .5s ease;
+  }
+
+  &:active {
+    background-color: darken($color, 7%);
+  }
+}
+
+@mixin svgLinkFill($color) {
+  a:active,
+  a:hover {
+    path {
+      fill: $color;
+      transition: fill .5s ease-out;
+    }
+  }
+}
+
+@mixin center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin linkMore {
+  position: relative;
+  display: block;
+  padding-top: 35px;
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 24px;
+  color: $blue;
+  &:hover {
+    color: darken($darkBlue, 10%);
+    transition: color .5s ease;
+
+  }
+  &:active {
+    color: $darkBlue;
+  }
+
+  &::after {
+    content: url("/src/assets/img/arrow.svg");
+    position: absolute;
+    margin-top: 3px;
+    margin-left: 16px;
+  }
+}
+
+@mixin flex {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+

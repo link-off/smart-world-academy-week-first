@@ -1,0 +1,166 @@
+@import 'src/assets/scss/utils/vars';
+@import 'src/assets/scss/utils/mixins';
+@import 'src/assets/scss/utils/fonts';
+
+.about {
+  &__list {
+    max-width: 1213px;
+    @include resetList;
+    flex-flow: column;
+    padding-top: 60px;
+    padding-bottom: 116px;
+    margin-left: 102px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+
+    &:last-child {
+      margin-top: 228px;
+
+      .about__picture {
+        margin-right: 166px;
+        order: 2;
+
+        &::after {
+          top: 27px;
+          left: 64px;
+        }
+      }
+
+      .about__descr {
+        order: 1;
+      }
+
+      .about__title {
+        margin-top: 99px;
+      }
+    }
+  }
+
+  &__picture {
+    position: relative;
+    z-index: 10;
+
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: -55px;
+      left: 6px;
+      width: 390px;
+      height: 483px;
+      background: linear-gradient(147.4deg, #0F7BFF 7.27%, #0063DD 93.68%);
+      border-radius: 40px;
+      transform: matrix(0.77, -0.64, -0.64, -0.77, 0, 0);
+    }
+  }
+
+  &__image {
+    border-radius: 20px;
+
+  }
+
+  &__descr {
+    max-width: 543px;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 500;
+    padding: 0;
+    margin: 94px 0 0;
+  }
+
+  &__text {
+    padding: 0;
+    margin: 30px 0 0;
+
+    font-weight: 200;
+    line-height: 24px;
+  }
+
+  &__link {
+
+    @include linkMore;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .about {
+    &__list {
+      margin-left: 20px
+    }
+
+    &__item {
+      &:last-child {
+        .about__picture {
+          margin-right: 185px;
+        }
+      }
+
+    }
+
+    &__picture {
+      margin-right: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: $laptopSize) {
+  .about {
+    &__picture {
+      &::after {
+        display: none;
+      }
+    }
+
+    &__item {
+      &:last-child {
+        .about__picture {
+          margin-right: 0;
+          margin-left: 20px;
+        }
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: $tableSize) {
+  .about {
+
+    &__list {
+      padding-bottom: 50px;
+    }
+
+    &__item {
+      flex-flow: column;
+      align-items: center;
+
+      &:last-child {
+        margin-top: 30px;
+        .about__picture {
+          order: 1;
+          margin-right: 20px;
+        }
+        .about__title {
+          margin-top: 30px;
+        }
+      }
+    }
+
+    &__title {
+      margin-top: 30px;
+    }
+
+    &__link {
+      padding-top: 15px;
+    }
+    &__image {
+      width: 100%;
+    }
+  }
+
+}
